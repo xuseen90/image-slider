@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide-container active">
+        <div class="slide">
+          <div class="content">
+            <h2>01.Website layout</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+              doloribus? Officia ipsam eius impedit, odio laboriosam nihil
+              itaque omnis maxime?
+            </p>
+            <button class="btn">Buy Now</button>
+          </div>
+          <div class="images">
+            <img src="./images/img1.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content">
+            <h2>02.Website Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+              doloribus? Officia ipsam eius impedit, odio laboriosam nihil
+              itaque omnis maxime?
+            </p>
+            <button class="btn">Buy Now</button>
+          </div>
+          <div class="images">
+            <img src="./images/img2.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content">
+            <h2>03.Website development</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+              doloribus? Officia ipsam eius impedit, odio laboriosam nihil
+              itaque omnis maxime?
+            </p>
+            <button class="btn">Buy Now</button>
+          </div>
+          <div class="images">
+            <img src="./images/img3.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- <div id="prev" onclick="prev()"><</div>
+      <div id="next" onclick="next()">></div> -->
+    </div>
+
+    <script>
+      let slide = document.querySelectorAll('.slide-container')
+      let index = 0
+      function next() {
+        slide[index].classList.remove('active')
+        index = (index + 1) % slide.length
+        slide[index].classList.add('active')
+      }
+      function prev() {
+        slide[index].classList.remove('active')
+        index = (index - 1 + slide.length) % slide.length
+        slide[index].classList.add('active')
+      }
+
+      setInterval(next, 3000)
+    </script>
+  </body>
+</html>

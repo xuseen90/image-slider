@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Wix Madefor Text', sans-serif;
+  border: none;
+  outline: none;
+}
+body {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+.container .slide-container {
+  display: none;
+}
+.container .slide-container.active {
+  display: block;
+}
+.container .slide-container .slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 20px 9%;
+  padding-bottom: 70px;
+  animation: contextAnimation 0.4s linear;
+  transition:  animation 3s linear;
+}
+@keyframes contextAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+ 
+}
+.container .slide-container .slide .content {
+  flex: 1 1 350px;
+}
+
+.container .slide-container .slide .images {
+  flex: 1 1 500px;
+}
+
+.container .slide-container .slide .images img {
+  width: 100%;
+  /* animation: image 0.4s linear; */
+}
+
+.container .slide-container .slide .content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.container .slide-container .slide .content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.container .slide-container .slide .content .btn {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.container .slide-container .slide .content .btn:hover {
+  background-color: #666;
+}
+
+.container #prev,
+.container #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+}
+.container #prev:hover,
+.container #next:hover {
+  background-color: #666;
+}
+.container #prev {
+  left: 20px;
+}
+.container #next {
+  right: 20px;
+}
